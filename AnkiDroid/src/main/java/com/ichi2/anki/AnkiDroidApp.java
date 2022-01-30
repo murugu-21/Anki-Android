@@ -354,7 +354,15 @@ public class AnkiDroidApp extends Application {
         }
 
         // make default HTML / JS debugging true for debug build and disable for unit/android tests
-        if (BuildConfig.DEBUG && !AdaptionUtil.isRunningAsUnitTest()) {
+        boolean isDebug = false;
+        try {
+            Class.forName ("org.junit.Test");
+        } catch (ClassNotFoundException e) {
+            isDebug = true;
+        }
+        Timber.d("isDebug: %s", Boolean.toString(isDebug));
+
+        if (BuildConfig.DEBUG && isDebug) {
             preferences.edit().putBoolean("html_javascript_debugging", true).apply();
         }
         
