@@ -163,11 +163,15 @@ object AdaptionUtil {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 83bbe9054 (refactor with docs)
     /** make default HTML / JS debugging true for debug build and disable for unit/android tests
      * isRunningAsUnitTest checks if we are in debug or testing environment by checking if org.junit.Test class
      * is imported.
      * https://stackoverflow.com/questions/28550370/how-to-detect-whether-android-app-is-running-ui-test-with-espresso
      */
+<<<<<<< HEAD
     @JvmStatic
     val isRunningAsUnitTest: Boolean
 =======
@@ -175,10 +179,15 @@ object AdaptionUtil {
     @JvmStatic
     val isDebug: Boolean
 >>>>>>> 554835b17 (refactor to adaption util)
+=======
+    @JvmStatic
+    val isRunningAsUnitTest: Boolean
+>>>>>>> 83bbe9054 (refactor with docs)
         get() {
             try {
                 Class.forName("org.junit.Test")
             } catch (ignored: ClassNotFoundException) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 Timber.d("isRunningAsUnitTest: %b", false)
                 return false
@@ -192,5 +201,12 @@ object AdaptionUtil {
             Timber.d("isDebug: %b", false)
             return false
 >>>>>>> 554835b17 (refactor to adaption util)
+=======
+                Timber.d("isRunningAsUnitTest: %b", false)
+                return false
+            }
+            Timber.d("isRunningAsUnitTest: %b", true)
+            return true
+>>>>>>> 83bbe9054 (refactor with docs)
         }
 }
